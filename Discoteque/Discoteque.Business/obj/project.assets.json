@@ -213,6 +213,19 @@
         "build": {
           "buildTransitive/net6.0/_._": {}
         }
+      },
+      "Discoteque.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.InMemory": "7.0.9"
+        },
+        "compile": {
+          "bin/placeholder/Discoteque.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Discoteque.Data.dll": {}
+        }
       }
     }
   },
@@ -540,10 +553,16 @@
         "microsoft.extensions.primitives.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Discoteque.Data/1.0.0": {
+      "type": "project",
+      "path": "../Discoteque.Data/Discoteque.Data.csproj",
+      "msbuildProject": "../Discoteque.Data/Discoteque.Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Discoteque.Data >= 1.0.0",
       "Microsoft.EntityFrameworkCore.InMemory >= 7.0.9"
     ]
   },
@@ -579,7 +598,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\alvar\\Documents\\Personal\\Curso DocNet\\Discoteque\\Discoteque.Data\\Discoteque.Data.csproj": {
+              "projectPath": "C:\\Users\\alvar\\Documents\\Personal\\Curso DocNet\\Discoteque\\Discoteque.Data\\Discoteque.Data.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

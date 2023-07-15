@@ -10,4 +10,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Discoteque.Data\Discoteque.Data.csproj" />
+  </ItemGroup>
+
 </Project>

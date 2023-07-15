@@ -1,3 +1,8 @@
+using Microsoft.EntityFrameworkCore;
+using Discoteque.Data;
+using Discoteque.Business.IServices;
+using Discoteque.Business.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,6 +12,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddDbContext<DiscotequeContext>(
+    opt => opt.UseInMemoryDatabase("Discoteque"));
+
+builder.Services.AddScoped<IArtistService, ArtistService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
