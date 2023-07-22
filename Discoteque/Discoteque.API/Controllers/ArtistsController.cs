@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Discoteque.Business.IServices;
+using Discoteque.Data.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,10 +21,17 @@ namespace Discoteque.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public IActionResult Get()
         {
-            var artists = await _artistService.GetArtistAsync();
+            var artists = _artistService.GetArtistAsync();
             return Ok(artists);
+        }
+
+        [HttpPost, Route("CreateArtists")]
+        public IActionResult CreateArtists(Artist artist)
+        {
+            var result = _artistService.CreateArtist(artist);
+            return Ok(result);
         }
     }
 }
